@@ -160,3 +160,17 @@ label{display:grid;gap:7px;color:#bdbdbd;font-size:.9rem}
   .footer-bottom{display:block}
   .footer-bottom div+div{margin-top:8px}
 }
+/* ESFIDELIS background watermark */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("brand-hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 650px auto;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
