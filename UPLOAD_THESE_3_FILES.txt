@@ -1,0 +1,15 @@
+ESFIDELIS IMAGE FIX
+
+Upload these 3 files to the ROOT of your existing GitHub repository:
+
+1. brand-hero.png
+2. index.html
+3. product-retatrutide.html
+
+When GitHub asks about replacing index.html and product-retatrutide.html, confirm the replacement.
+
+Commit directly to the main branch.
+
+Vercel is already connected to main, so it should automatically redeploy after the GitHub commit.
+
+Do not create a new GitHub repository or a new Vercel project.
