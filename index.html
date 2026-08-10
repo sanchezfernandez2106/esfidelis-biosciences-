@@ -46,6 +46,7 @@
         <a href="coa.html">COA</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+     <button class="btn small" id="mobileAccountButton" type="button">Log In</button>
       </div>
     </header>
     
@@ -159,22 +160,28 @@
     });
 
     const accountButton = document.getElementById('accountButton');
+    const mobileAccountButton = document.getElementById('mobileAccountButton');
 
-    if (!accountButton) return;
+    function setupAccountButton(button) {
+      if (!button) return;
 
-    if (Clerk.isSignedIn) {
-      accountButton.textContent = 'Account';
+      if (Clerk.isSignedIn) {
+        button.textContent = 'Account';
 
-      accountButton.addEventListener('click', function () {
-        Clerk.openUserProfile();
-      });
-    } else {
-      accountButton.textContent = 'Log In';
+        button.addEventListener('click', function () {
+          Clerk.openUserProfile();
+        });
+      } else {
+        button.textContent = 'Log In';
 
-      accountButton.addEventListener('click', function () {
-        Clerk.openSignIn();
-      });
+        button.addEventListener('click', function () {
+          Clerk.openSignIn();
+        });
+      }
     }
+
+    setupAccountButton(accountButton);
+    setupAccountButton(mobileAccountButton);
   });
 </script>
  </body></html>
