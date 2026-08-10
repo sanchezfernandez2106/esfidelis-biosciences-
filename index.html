@@ -35,10 +35,10 @@
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
         </nav>
-        <div class="nav-actions">
-          <a class="btn secondary small" href="coa.html">Verify Batch</a>
-          <a class="btn small" href="contact.html">Request Info</a>
-        </div>
+      <div class="nav-actions">
+  <a class="btn secondary small" href="coa.html">Verify Batch</a>
+  <button class="btn small" id="accountButton" type="button">Log In</button>
+</div>
         <button id="mobileToggle" class="mobile-toggle" aria-label="Menu">Menu</button>
       </div>
       <div id="mobileMenu" class="container mobile-menu">
@@ -152,4 +152,29 @@
     </footer>
     
 <script src="script.js"></script>
-</body></html>
+<script>
+  window.addEventListener('load', async function () {
+    await Clerk.load({
+      ui: { ClerkUI: window.__internal_ClerkUICtor },
+    });
+
+    const accountButton = document.getElementById('accountButton');
+
+    if (!accountButton) return;
+
+    if (Clerk.isSignedIn) {
+      accountButton.textContent = 'Account';
+
+      accountButton.addEventListener('click', function () {
+        Clerk.openUserProfile();
+      });
+    } else {
+      accountButton.textContent = 'Log In';
+
+      accountButton.addEventListener('click', function () {
+        Clerk.openSignIn();
+      });
+    }
+  });
+</script>
+ </body></html>
