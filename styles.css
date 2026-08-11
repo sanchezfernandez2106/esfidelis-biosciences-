@@ -263,3 +263,19 @@ label{display:grid;gap:7px;color:#bdbdbd;font-size:.9rem}
 }
 
 /* fixed wallpaper version */
+.product-image{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:16px;
+  margin:14px 0 18px;
+  object-fit:cover;
+}
+
+.product-card{
+  overflow:hidden;
+}
+
+.product-card h3{
+  margin-top:8px;
+}
