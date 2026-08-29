@@ -634,3 +634,30 @@ body.research-gate-open{
     font-size:.67rem;
   }
 }
+@media(max-width:620px){
+
+  .research-gate-card h1{
+    font-size:1.45rem;
+    line-height:1.1;
+    margin-bottom:4px;
+  }
+
+  .research-gate-intro{
+    margin-top:12px;
+    margin-bottom:18px;
+  }
+
+  .research-check{
+    padding:12px;
+  }
+
+  .research-gate-footer{
+    margin-top:17px;
+    padding-top:14px;
+  }
+
+  .research-gate-legal{
+    margin-top:11px;
+    line-height:1.4;
+  }
+}
