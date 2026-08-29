@@ -106,10 +106,18 @@ if (researchGate) {
 
     if (!allConfirmed) return;
 
-    sessionStorage.setItem('esfResearchVerified', 'true');
+  sessionStorage.setItem('esfResearchVerified', 'true');
 
-    researchGate.classList.add('research-gate-hidden');
-    document.body.classList.remove('research-gate-open');
+const returnTo = sessionStorage.getItem('esfResearchReturn');
+
+if (returnTo) {
+  sessionStorage.removeItem('esfResearchReturn');
+  window.location.href = returnTo;
+  return;
+}
+
+researchGate.classList.add('research-gate-hidden');
+document.body.classList.remove('research-gate-open');  
   });
 
   updateResearchButton();
