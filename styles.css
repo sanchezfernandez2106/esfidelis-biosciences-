@@ -562,3 +562,75 @@ body.research-gate-open{
     min-height:54px;
   }
 }
+/* ESFIDELIS verification mobile refinement */
+
+@media(max-width:620px){
+
+  .research-gate{
+    padding:10px;
+  }
+
+  .research-gate-card{
+    width:100%;
+    margin:8px auto;
+    padding:24px 14px 22px;
+    border-radius:14px;
+  }
+
+  .research-gate-brand{
+    font-size:1rem;
+    margin-bottom:18px;
+    letter-spacing:.06em;
+  }
+
+  .research-gate-badge{
+    margin-bottom:18px;
+    padding:6px 11px;
+    font-size:.58rem;
+  }
+
+  .research-gate-card h1{
+    font-size:1.55rem;
+    line-height:1.08;
+  }
+
+  .research-gate-intro{
+    margin:14px auto 20px;
+    font-size:.82rem;
+    line-height:1.5;
+  }
+
+  .research-check{
+    margin-top:10px;
+    padding:13px 12px;
+    gap:10px;
+    font-size:.82rem;
+    line-height:1.45;
+  }
+
+  .research-check input{
+    width:18px;
+    height:18px;
+  }
+
+  .research-enter-btn{
+    min-height:50px;
+    margin-top:18px;
+    font-size:.9rem;
+  }
+
+  .research-exit-link{
+    margin-top:15px;
+    font-size:.8rem;
+  }
+
+  .research-gate-footer{
+    margin-top:20px;
+    padding-top:16px;
+    font-size:.75rem;
+  }
+
+  .research-gate-legal{
+    font-size:.67rem;
+  }
+}
