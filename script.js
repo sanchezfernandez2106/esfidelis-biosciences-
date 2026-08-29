@@ -63,3 +63,54 @@ if(form){
     window.location.href = `mailto:info@esfidelis.com?subject=${subject}&body=${body}`;
   });
 }
+// =========================================================
+// ESFIDELIS RESEARCHER VERIFICATION GATE
+// =========================================================
+
+const researchGate = $('#researchGate');
+const ageConfirm = $('#ageConfirm');
+const researchConfirm = $('#researchConfirm');
+const useConfirm = $('#useConfirm');
+const researchEnterBtn = $('#researchEnterBtn');
+
+if (researchGate) {
+  const verifiedThisSession =
+    sessionStorage.getItem('esfResearchVerified') === 'true';
+
+  if (verifiedThisSession) {
+    researchGate.classList.add('research-gate-hidden');
+  } else {
+    document.body.classList.add('research-gate-open');
+  }
+
+  function updateResearchButton() {
+    if (!researchEnterBtn) return;
+
+    const allConfirmed =
+      ageConfirm?.checked &&
+      researchConfirm?.checked &&
+      useConfirm?.checked;
+
+    researchEnterBtn.disabled = !allConfirmed;
+  }
+
+  [ageConfirm, researchConfirm, useConfirm].forEach(box => {
+    box?.addEventListener('change', updateResearchButton);
+  });
+
+  researchEnterBtn?.addEventListener('click', () => {
+    const allConfirmed =
+      ageConfirm?.checked &&
+      researchConfirm?.checked &&
+      useConfirm?.checked;
+
+    if (!allConfirmed) return;
+
+    sessionStorage.setItem('esfResearchVerified', 'true');
+
+    researchGate.classList.add('research-gate-hidden');
+    document.body.classList.remove('research-gate-open');
+  });
+
+  updateResearchButton();
+}
