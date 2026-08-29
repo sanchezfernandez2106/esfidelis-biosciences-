@@ -308,3 +308,291 @@ label{display:grid;gap:7px;color:#bdbdbd;font-size:.9rem}
     padding-top:32px;
   }
 }
+/* =========================================================
+   ESFIDELIS RESEARCHER VERIFICATION GATE
+   ========================================================= */
+
+.research-gate{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  overflow-y:auto;
+
+  background:
+    radial-gradient(circle at 75% 15%, rgba(0,170,220,.18), transparent 32%),
+    radial-gradient(circle at 20% 85%, rgba(0,120,170,.12), transparent 35%),
+    rgba(4,8,12,.94);
+
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+.research-gate-card{
+  width:min(100%, 680px);
+  margin:auto;
+  padding:38px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19,25,31,.98),
+      rgba(9,14,19,.98)
+    );
+
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:28px;
+
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.60),
+    0 0 50px rgba(0,170,220,.08);
+
+  color:#fff;
+}
+
+.research-gate-brand{
+  text-align:center;
+  font-size:1.55rem;
+  font-weight:800;
+  letter-spacing:.05em;
+  margin-bottom:22px;
+}
+
+.research-gate-brand span{
+  color:#54c7e8;
+}
+
+.research-gate-badge{
+  width:max-content;
+  max-width:100%;
+  margin:0 auto 20px;
+  padding:8px 14px;
+
+  border:1px solid rgba(84,199,232,.35);
+  border-radius:999px;
+
+  background:rgba(84,199,232,.08);
+
+  color:#9edff1;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.research-gate-card h1{
+  margin:0;
+  text-align:center;
+  font-size:clamp(2rem, 5vw, 3rem);
+  line-height:1.05;
+  letter-spacing:-.035em;
+}
+
+.research-gate-intro{
+  max-width:570px;
+  margin:18px auto 28px;
+  text-align:center;
+
+  color:#aeb7c0;
+  line-height:1.65;
+  font-size:.97rem;
+}
+
+.research-check{
+  display:flex;
+  grid-template-columns:auto 1fr;
+  align-items:flex-start;
+  gap:14px;
+
+  margin-top:14px;
+  padding:18px;
+
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:17px;
+
+  background:rgba(255,255,255,.035);
+
+  color:#cdd4da;
+  line-height:1.55;
+
+  cursor:pointer;
+  transition:
+    border-color .2s ease,
+    background .2s ease,
+    transform .2s ease;
+}
+
+.research-check:hover{
+  border-color:rgba(84,199,232,.40);
+  background:rgba(84,199,232,.055);
+}
+
+.research-check:has(input:checked){
+  border-color:rgba(84,199,232,.55);
+  background:rgba(84,199,232,.075);
+}
+
+.research-check input{
+  width:21px;
+  height:21px;
+  margin:2px 0 0;
+
+  accent-color:#42bede;
+  cursor:pointer;
+  flex-shrink:0;
+}
+
+.research-check strong{
+  color:#fff;
+}
+
+.research-enter-btn{
+  width:100%;
+  min-height:58px;
+  margin-top:24px;
+
+  border:0;
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #168ca9,
+      #31b9d7
+    );
+
+  color:#fff;
+
+  font:inherit;
+  font-weight:800;
+  font-size:1rem;
+  letter-spacing:.01em;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 15px 35px rgba(40,180,215,.20);
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease,
+    box-shadow .2s ease;
+}
+
+.research-enter-btn:not(:disabled):hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 18px 42px rgba(40,180,215,.28);
+}
+
+.research-enter-btn:disabled{
+  opacity:.28;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+.research-exit-link{
+  display:block;
+  width:max-content;
+  margin:19px auto 0;
+
+  color:#77818c;
+  text-decoration:none;
+  font-size:.9rem;
+}
+
+.research-exit-link:hover{
+  color:#fff;
+}
+
+.research-gate-footer{
+  margin-top:28px;
+  padding-top:22px;
+
+  border-top:1px solid rgba(255,255,255,.09);
+
+  text-align:center;
+  color:#87939e;
+  font-size:.85rem;
+}
+
+.research-gate-footer strong{
+  color:#b9c5ce;
+}
+
+.research-gate-legal{
+  max-width:560px;
+  margin:15px auto 0;
+
+  text-align:center;
+  color:#65707b;
+  line-height:1.5;
+  font-size:.74rem;
+}
+
+/* Prevent site scrolling while gate is open */
+body.research-gate-open{
+  overflow:hidden;
+}
+
+/* Hide after verification */
+.research-gate.research-gate-hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  transition:
+    opacity .3s ease,
+    visibility .3s ease;
+}
+
+/* Mobile */
+@media(max-width:620px){
+
+  .research-gate{
+    align-items:flex-start;
+    padding:18px 14px;
+  }
+
+  .research-gate-card{
+    padding:27px 18px;
+    border-radius:22px;
+    margin:16px auto;
+  }
+
+  .research-gate-brand{
+    font-size:1.25rem;
+  }
+
+  .research-gate-badge{
+    font-size:.66rem;
+    letter-spacing:.09em;
+  }
+
+  .research-gate-card h1{
+    font-size:2rem;
+  }
+
+  .research-gate-intro{
+    font-size:.9rem;
+    margin-bottom:22px;
+  }
+
+  .research-check{
+    padding:15px;
+    gap:11px;
+    font-size:.9rem;
+  }
+
+  .research-check input{
+    width:20px;
+    height:20px;
+  }
+
+  .research-enter-btn{
+    min-height:55px;
+  }
+}
